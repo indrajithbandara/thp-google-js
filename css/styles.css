@@ -115,6 +115,8 @@ hr.separator {
 	box-shadow:1px 1px 5px grey;  
 	height: 50px;
 	width: 500px;
+	font-size: 15px;
+	margin: 10px;
 }
 
 .footer {
