@@ -46,6 +46,12 @@ hr.separator {
 }
 
 
+
+.text-center {
+	text-align: center;
+}
+
+
 .button {
 	background-color: #f2f2f2;
 	border: 1px solid #f2f2f2;
@@ -158,59 +164,6 @@ hr.separator {
 	display: none;
 }
 
-.round-btn {
-	border-radius: 50%;
-	width: 300px;
-	height: 300px;
-	color: #000;
-	font-size: 25px;
-	font-weight: bold;
-	border: 0;
-	box-shadow: 2px 2px 2px #ccc;	
-	text-shadow: 2px 2px 2px #ccc;
-	position: relative;
-	background: url(http://hop.ie/balls/images/tennisball.png) no-repeat;
-	background-size: 100%;
-}
-
-.round-btn:before {
-	content: "";
-	position: absolute;
-	top: 1%;
-	left: 5%;
-	width: 90%;
-	height: 90%;
-	border-radius: 50%;
-	background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
-	z-index: 2;
-  }
-
-  .round-btn:after {
-	content: "";
-	position: absolute;
-	border-radius: 100%;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: radial-gradient(circle at 50% 30%, rgba(245, 237, 48, 0), rgba(200, 190, 20, 0.2) 50%, #575300 100%);
-  }
-  .round-btn .shadow {
-	  position: absolute;
-	  width: 100%;
-	  height: 100%;
-	  background: radial-gradient(circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
-	  -webkit-transform: rotateX(90deg) translateZ(-160px);
-	  transform: rotateX(90deg) translateZ(-160px);
-	  z-index: 1; 
-}
-
-  
-  
-#button-container {
-	text-align:center;
-}
-
 .sweet-alert button.cancel {
     background-color: red;
 }
@@ -237,3 +190,94 @@ hr.separator {
 
   }
 
+  @keyframes move-eye-skew {
+	0% {
+	  transform: none;
+	}
+	20% {
+	  transform: translateX(-68px) translateY(30px) skewX(15deg) skewY(-10deg) scale(0.95);
+	}
+	25%, 44% {
+	  transform: none;
+	}
+	50%, 60% {
+	  transform: translateX(68px) translateY(-40px) skewX(5deg) skewY(2deg) scaleX(0.95);
+	}
+	66%, 100% {
+	  transform: none;
+	}
+  }
+  
+  .ball {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	border-radius: 50%;
+	position: relative;
+	background: radial-gradient(circle at 50% 40%, #fcfcfc, #efeff1 66%, #9b5050 100%);
+  }
+  .ball:after {
+	content: "";
+	position: absolute;
+	top: 5%;
+	left: 10%;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+	transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  }
+  
+  .iris {
+	width: 40%;
+	height: 40%;
+	margin: 30%;
+	border-radius: 50%;
+	background: radial-gradient(circle at 50% 50%, #208ab4 0%, #6fbfff 30%, #4381b2 100%);
+	transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+	position: absolute;
+	animation: move-eye-skew 5s ease-out infinite;
+  }
+  .iris:before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 37.5%;
+	height: 37.5%;
+	border-radius: 50%;
+	top: 31.25%;
+	left: 31.25%;
+	background: black;
+  }
+  .iris:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 31.25%;
+	height: 31.25%;
+	border-radius: 50%;
+	top: 18.75%;
+	left: 18.75%;
+	background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .ball .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+  transform: rotateX(90deg) translateZ(-150px);
+	z-index: -1;
+  }
+  .stage {
+	width: 300px;
+	height: 300px;
+	display: inline-block;
+	margin: 20px;
+	perspective: 1200px;
+	perspective-origin: 50% 50%;
+	transform-style: preserve-3d;
+	transform: rotateY(0.01deg);
+	margin-left: 35%;
+  }

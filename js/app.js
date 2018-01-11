@@ -1,3 +1,4 @@
+// add hidden class to google container on window.load and countdown untill popup
 window.onload = function() {  
     document.getElementById("hidden-container").classList.add("hidden");
     setTimeout(function() {
