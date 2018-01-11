@@ -33,7 +33,6 @@ searchBox.addEventListener('keyup', (e) => {
         userText.preventDefault;
         let replaced = userText.split(' ').join('+');  
         searchGoogle(replaced);
-        userText.value= "";
     }
 });
 
